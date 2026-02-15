@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Créer produit - Admin{% endblock %}
+
+{% block content %}
+  <h1 class="text-2xl font-semibold mb-4">Ajouter un produit</h1>
+  <div class="bg-white rounded-lg shadow p-6 max-w-lg">
+    <form method="POST" class="space-y-4">
+      {{ form.hidden_tag() }}
+      <div>
+        {{ form.name.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.name(class_='mt-1 block w-full rounded border-gray-200 shadow-sm') }}
+      </div>
+      <div>
+        {{ form.price.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.price(class_='mt-1 block w-full rounded border-gray-200 shadow-sm') }}
+      </div>
+      <div>
+        {{ form.stock.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.stock(class_='mt-1 block w-full rounded border-gray-200 shadow-sm') }}
+      </div>
+      <div>
+        {{ form.description.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.description(class_='mt-1 block w-full rounded border-gray-200 shadow-sm') }}
+      </div>
+      <div>
+        {{ form.submit(class_='w-full bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700') }}
+      </div>
+    </form>
+  </div>
+{% endblock %}

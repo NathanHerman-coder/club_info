@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout - Mini Shop{% endblock %}
+
+{% block content %}
+  <h1 class="text-2xl font-semibold mb-4">Finaliser la commande</h1>
+  <div class="bg-white rounded-lg shadow p-6 max-w-lg">
+    <form method="POST" class="space-y-4">
+      {{ form.hidden_tag() }}
+      <div>
+        {{ form.fullname.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.fullname(class_='mt-1 block w-full rounded border-gray-200 shadow-sm') }}
+      </div>
+      <div>
+        {{ form.email.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.email(class_='mt-1 block w-full rounded border-gray-200 shadow-sm') }}
+      </div>
+      <div>
+        {{ form.address.label(class_='block text-sm font-medium text-gray-700') }}
+        {{ form.address(class_='mt-1 block w-full rounded border-gray-200 shadow-sm') }}
+      </div>
+      <div>
+        {{ form.submit(class_='w-full bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700') }}
+      </div>
+    </form>
+  </div>
+{% endblock %}
